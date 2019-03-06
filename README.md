@@ -5,7 +5,7 @@
     
     }
     
-    Methods, fields are still unclear based on information given.
+######Methods, fields are still unclear based on information given.
     
-    Remarks: UserOfList should be capable of utilizing methods in List_inArraySlots to
-    imitate or effectively represent lists in Java.
+######Remarks: UserOfList should be capable of utilizing methods in List_inArraySlots to
+######imitate or effectively represent lists in Java.
