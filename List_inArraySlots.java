@@ -6,11 +6,15 @@
 public class List_inArraySlots {
 
     // declare fields here
+    private int[] list; //the array
+    private int slotsFilled; //num of slot in array filled
 
     /**
       Construct an empty list with a small initial capacity.
      */
     public List_inArraySlots() {
+        list = new int[5];
+        slotsFilled = 0;
     }
 
 
@@ -18,6 +22,7 @@ public class List_inArraySlots {
       @return the number of elements in this list
      */
     public int size() {
+        return slotsFilled;
     }
 
 
@@ -26,6 +31,11 @@ public class List_inArraySlots {
        in [a,b,c,] format
       */
     public String toString() {
+        String output = "[";
+        for (int i = 0; i < slotsFilled; i++) {
+            output += list[i] + ",";
+        }
+        return output + "]";
     }
 
 
@@ -34,7 +44,11 @@ public class List_inArraySlots {
 
       @return true, in keeping with conventions yet to be discussed
      */
-     public boolean add( int value) {
+    public boolean add( int value) {
+        if(slotsFilled = list.length)
+            expand();
+        list[slotsFilled++] = value;
+        return true;
      }
 
 
