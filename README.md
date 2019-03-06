@@ -1,5 +1,5 @@
 # List_inArraySlots: An Introduction to ArrayLists
-## Partners: @AdamCohen0, @LeoHasher, @Oscar Dorr
+## Partners: @AdamCohen0, @lrhasher, @OscarDorr
 ###### Constructor:
     public List_inArraySlots() {
 
