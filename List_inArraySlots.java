@@ -45,7 +45,7 @@ public class List_inArraySlots {
       @return true, in keeping with conventions yet to be discussed
      */
     public boolean add( int value) {
-        if(slotsFilled = list.length)
+        if(slotsFilled == list.length) //checks if there are open slots
             expand();
         list[slotsFilled++] = value;
         return true;
@@ -57,12 +57,9 @@ public class List_inArraySlots {
       preserving existing data
      */
      private void expand() {
-        System.out.println( "expand... (for debugging)");
-           /* S.O.P. rules for debugging:
-              Working methods should be silent. But during
-              development, the programmer must verify that
-              this method is called when that is appropriate.
-              So test using the println(), then comment it out.
-              */
+        int[] storage = list; //store old list
+        list = new int[2 * slotsFilled]; //create new list
+        for(int i = 0; i < storage.length; i++) //repopulate with old values
+           list[i] = storage[i];
      }
 }
