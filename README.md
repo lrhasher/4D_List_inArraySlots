@@ -1,5 +1,5 @@
 # implement a list by storing data in an encapsulated array
-## Partners: @AdamCohen0, @lrhasher, @OscarDorr
+## Partners: [Adam Cohen](https://github.com/AdamCohen0), [Leo Hasher](https://github.com/lrhasher), [Oscar Dorr](https://github.com/OscarDorr)
 ###### Constructor:
     public List_inArraySlots() {
 
