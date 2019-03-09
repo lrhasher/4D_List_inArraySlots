@@ -26,6 +26,18 @@ public class List_inArraySlots {
         return filledElements;
     }
 
+    /**
+      accessor
+      @return element @index from this list
+      precondition: @index is within the bounds of the array.
+          (Having warned the user about this precondition,
+           you should NOT complicate your code to check
+           whether user violated the condition.)
+     */
+    public int get( int index ) {
+        return elements[index];
+    }
+
 
      /**
        @return a string representation of this list,
@@ -36,6 +48,18 @@ public class List_inArraySlots {
         for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
             result += elements[ elemIndex] + ",";
         return result + "]";
+    }
+
+    /**
+          Set value at @index to @newValue
+
+          @return old value at @index
+          @precondition: @index is within the bounds of this list.
+         */
+    public int set( int index, int newValue ) {
+        int oldValue = elements[index];
+        elements[index] = newValue;
+        return oldValue;
     }
 
 
@@ -52,14 +76,48 @@ public class List_inArraySlots {
          filledElements++;
          // idiomatic version: elements[ filledElements++] = value;
         return true;
-}
+    }
 
+    /**
+          Insert @value at position @index in this list.
+
+          Shift the element currently at that position (if any)
+          and any subsequent elements to the right
+          (that is, increase the index associated with each).
+         */
+    public void add( int index, int value) {
+        if( filledElements == elements.length) expand();
+
+        for (int elemIndex = filledElements; elemIndex > index; elemIndex--)
+            elements[elemIndex] = elements[elemIndex - 1];
+
+        elements[index] = value;
+        filledElements++;
+    }
+
+    /**
+      Remove the element at position @index in this list.
+
+      Shift any subsequent elements to the left (that is,
+      decrease the index associated with each).
+
+      @return the value that was removed from the list
+     */
+    public int remove( int index) {
+        int oldValue = elements[index];
+
+        for (int elemIndex = index; elemIndex < filledElements; elemIndex++)
+            elements[elemIndex] = elements[elemIndex + 1];
+
+        filledElements--;
+        return oldValue;
+    }
 
     /**
       Double the capacity of the List_inArraySlots,
       preserving existing data.
      */
-     private void expand() {
+    private void expand() {
         System.out.println( "expand... (for debugging)");
            /* S.O.P. rules for debugging:
               Working methods should be silent. But during
